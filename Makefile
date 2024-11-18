@@ -61,4 +61,10 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: clean all re fclean
+push:
+	set -e
+	git add .
+	git commit -m "$(M)"
+	git push origin master
+
+.PHONY: clean all re fclean push
