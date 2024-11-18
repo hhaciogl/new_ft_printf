@@ -61,10 +61,12 @@ fclean: clean
 
 re: fclean all
 
+norm:
+	norminette $(C_FILES) ft_printf.h
+
 push:
-	set -e
 	git add .
 	git commit -m "$(M)"
 	git push origin master
 
-.PHONY: clean all re fclean push
+.PHONY: clean all re fclean push norm
