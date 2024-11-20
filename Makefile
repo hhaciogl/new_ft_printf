@@ -43,9 +43,9 @@ CFLAGS = -Wall -Wextra -Werror
 OBJECT_FILES = ft_printf.o
 ALL_OBJECT_FILES =$(OBJECT_FILES) $(addprefix libft/, $(LIBFT_OBJECT_FILES))
 
-all: $(NAME)
+all: libft/libft.a $(NAME)
 
-$(NAME): $(OBJECT_FILES) libft/libft.a
+$(NAME): $(ALL_OBJECT_FILES) 
 	ar src $(NAME) $(ALL_OBJECT_FILES)
 
 libft/libft.a: 
