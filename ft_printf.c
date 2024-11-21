@@ -6,7 +6,7 @@
 /*   By: hhaciogl <hhaciogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 17:40:25 by hhaciogl          #+#    #+#             */
-/*   Updated: 2024/11/21 02:59:57 by hhaciogl         ###   ########.fr       */
+/*   Updated: 2024/11/21 03:04:52 by hhaciogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,15 @@ int	ft_printf(const char *format, ...)
 	size_t				i;
 	size_t				j;
 	char				*str;
-	int					is_F;
+	int					is_f;
 
 	i = 0;
 	j = 0;
-	is_F = 0;
+	is_f = 0;
 	va_start(arg_list, format);
 	while (format[i])
 	{
-		if (is_F)
+		if (is_f)
 		{
 			if (format[i] == '%')
 			{
@@ -57,11 +57,11 @@ int	ft_printf(const char *format, ...)
 				str = NULL;
 			}
 
-			is_F = 0;
+			is_f = 0;
 		}
 		else if (format[i] == '%' && format[i+1])
 		{
-			is_F = 1;
+			is_f = 1;
 		}
 		else
 		{
