@@ -6,7 +6,7 @@
 /*   By: hhaciogl <hhaciogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 17:40:25 by hhaciogl          #+#    #+#             */
-/*   Updated: 2024/11/21 03:04:52 by hhaciogl         ###   ########.fr       */
+/*   Updated: 2024/11/21 11:49:04 by hhaciogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,12 @@ int	ft_printf(const char *format, ...)
 	{
 		if (is_f)
 		{
+			if (format[i] == 'c')
+			{
+				ft_putchar_fd(va_arg(arg_list, int), 1);
+				j -= 1;
+			}
+
 			if (format[i] == '%')
 			{
 				ft_putchar_fd(format[i], 1);
