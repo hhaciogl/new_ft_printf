@@ -64,9 +64,4 @@ re: fclean all
 norm:
 	norminette $(C_FILES) ft_printf.h
 
-push:
-	git add .
-	git commit -m "$(M)"
-	git push origin master
-
-.PHONY: clean all re fclean push norm
+.PHONY: clean all re fclean norm
